@@ -23,10 +23,7 @@ describe('my API Server', ()=> {
 
     //  1. callbacks ---> Promises (Promise.then() ) ----> Async/Await
     
-    it('handles my internal server errors', async () => {
-        const response = await request.post('/bad'); // async
-        expect(response.status).toEqual(500);
-    });
+    
 
     
     
@@ -53,10 +50,13 @@ describe('my API Server', ()=> {
     
     
 
-    it('200 if post', async () => {
-
-        const response = await request.post('/food'); // async
+    it('Create a record using POST', async () => {
+        const reqBody={"firstName":"shhsd",
+        "theMeal":"pizza",
+        "drink":"7up"}
+        const response = await request.post('/food').send(reqBody); // async
         expect(response.status).toEqual(200);
+      
         
     
     });

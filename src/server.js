@@ -2,7 +2,7 @@
 
 const express = require('express');
 const notFoundHandler = require('./error-handlers/404');
-const errorHandler = require('./error-handlers/500');
+// const errorHandler = require('./error-handlers/500');
 const logger =require('./middleware/logger')
 // const validator =require('./middleware/validator')
 const router = require('./routes/food');
@@ -22,16 +22,16 @@ app.get('/', (req, res)=> {
     
     res.send('hello m3lem 😎')
 });
-app.post('/bad', (req,res)=> {
-    let number = 12;
-    number.map(x=> console.log(x));
-    res.send('this Bad Route ');
-})
+// app.post('/bad', (req,res)=> {
+//     let number = 12;
+//     number.map(x=> console.log(x));
+//     res.send('this Bad Route ');
+// })
 
 
 
 app.use('*', notFoundHandler);
-app.use(errorHandler);
+// app.use(errorHandler);
 
 module.exports = {
      app,
