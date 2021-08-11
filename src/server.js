@@ -4,7 +4,7 @@ const express = require('express');
 const notFoundHandler = require('./error-handlers/404');
 const errorHandler = require('./error-handlers/500');
 const logger =require('./middleware/logger')
-const validator =require('./middleware/validator')
+// const validator =require('./middleware/validator')
 const router = require('./routes/food');
 const routerClothes = require('./routes/clothes');
 
@@ -27,16 +27,6 @@ app.post('/bad', (req,res)=> {
     number.map(x=> console.log(x));
     res.send('this Bad Route ');
 })
-
-app.get('/person',validator, (req, res)=> {
-    
-        res.json({
-            name:req.name
-        })
-       
-    
-    
-});
 
 
 

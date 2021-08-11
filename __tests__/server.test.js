@@ -28,8 +28,22 @@ describe('my API Server', ()=> {
         expect(response.status).toEqual(500);
     });
 
-    //============================ for food 
     
+    
+    it('200 get route /', async () => {
+        const response = await request.get('/'); // async
+        expect(response.status).toEqual(200);
+        
+    
+    });
+    it('200 get route /', async () => {
+        const response = await request.get('/'); // async
+      
+        expect(response.text).toEqual('hello m3lem 😎');
+        
+    
+    });
+    //============================ for food 
     it('200 get', async () => {
         const response = await request.get('/food'); // async
         expect(response.status).toEqual(200);
@@ -40,6 +54,7 @@ describe('my API Server', ()=> {
     
 
     it('200 if post', async () => {
+
         const response = await request.post('/food'); // async
         expect(response.status).toEqual(200);
         
@@ -69,7 +84,16 @@ describe('my API Server', ()=> {
     });
     
     
-
+    it('200 if post clothes', async () => {
+        let reqBody={"firstName":"kk",
+        "pants":"ss",
+        "shoes":"blsfack",
+        "Shirt":"greffen"}
+        const response = await request.post('/clothes').send(reqBody); // async
+        expect(response.status).toEqual(200);
+        
+    
+    });
    
     
     it('200 if put clothes ', async () => {
